@@ -9,6 +9,92 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+
+        <header>
+            <ul>
+                <li>
+                    Ho 3 flex item
+                </li>
+                <li>
+                    Ognuno occupa 100px
+                </li>
+                <li>
+                    Il contenitore ha una dimensione di 500px sul main-axis
+                </li>
+                <li>
+                    Quindi rimangono 200px da coprire (500 - (100 * 3))
+                </li>
+                <li>
+                    Due item hanno valore di flex-grow -> 1, mentre un solo item ha -> 3
+                </li>
+                <li>
+                    Quindi, in totale il valore di flex-grow complessivo è 1 + 3 + 1 = 5
+                </li>
+                <li>
+                    Sapendo che: rimangono 200px da coprire, da suddividere in 5 (che è il valore totale di flex-grow)
+                </li>
+                <li>
+                    Flex fa: 200 / 5 = 40
+                </li>
+                <li>
+                    Dopodiché, aggiunge ad ogni item il calcolo che ha appena fatto finché può secondo i singoli valori di flex-grow
+                </li>
+            </ul>
+        </header>
         
+        <main>
+
+            <div class="box red"></div>
+            <div class="box blue"></div>
+            <div class="box green"></div>
+
+        </main>
+
+        <hr>
+
+        
+
+        <header>
+            <ul>
+                <li>
+                    Ho 3 flex item
+                </li>
+                <li>
+                    Ognuno occupa 300px
+                </li>
+                <li>
+                    Il contenitore ha una dimensione di 500px sul main-axis
+                </li>
+                <li>
+                    Quindi ci sono 400px che sborderebbero ((300 * 3) - 500)
+                </li>
+                <li>
+                    Due item hanno valore di flex-shrink -> 1, mentre un solo item ha -> 3
+                </li>
+                <li>
+                    Quindi, in totale il valore di flex-shrink complessivo è 1 + 3 + 1 = 5
+                </li>
+                <li>
+                    Sapendo che: ci sono 400px in più, da suddividere in 5 (che è il valore totale di flex-shrink)
+                </li>
+                <li>
+                    Flex fa: 400 / 5 = 80
+                </li>
+                <li>
+                    Dopodiché, rimuove da ogni item il calcolo che ha appena fatto finché può secondo i singoli valori di flex-shrink
+                </li>
+            </ul>
+        </header>
+        
+        <main>
+
+            <div class="box-shrink red"></div>
+            <div class="box-shrink blue">
+                a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+            </div>
+            <div class="box-shrink green"></div>
+
+        </main>
+
     </body>
 </html>
